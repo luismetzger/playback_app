@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
 
-	def index 
+	def index
 
+		render :index
 	end
 
 	def about_us

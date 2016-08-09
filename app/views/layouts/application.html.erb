@@ -6,9 +6,93 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:300,400,500,600,700" rel="stylesheet">
   </head>
 
   <body>
+
+    <!-- Navbar -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar custom-nav1 hidden-sm hidden-xs">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Playback</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">login</a></li>
+            <li>
+              <a class="btn btn-default btn-outline"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign up</a>
+            </li>
+          </ul>
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <!-- Pushy Menu -->
+    <div class="visible-sm visible-xs">
+      <nav class="pushy pushy-left">
+          <ul>
+              <li class="pushy-submenu">
+                  <a href="#">Submenu 1</a>
+                  <ul>
+                      <li class="pushy-link"><a href="#">Item 1</a></li>
+                      <li class="pushy-link"><a href="#">Item 2</a></li>
+                      <li class="pushy-link"><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li class="pushy-submenu">
+                  <a href="#">Submenu 2</a>
+                  <ul>
+                      <li class="pushy-link"><a href="#">Item 1</a></li>
+                      <li class="pushy-link"><a href="#">Item 2</a></li>
+                      <li class="pushy-link"><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li class="pushy-submenu">
+                  <a href="#">Submenu 3</a>
+                  <ul>
+                      <li class="pushy-link"><a href="#">Item 1</a></li>
+                      <li class="pushy-link"><a href="#">Item 2</a></li>
+                      <li class="pushy-link"><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li class="pushy-submenu">
+                  <a href="#">Submenu 4</a>
+                  <ul>
+                      <li class="pushy-link"><a href="#">Item 1</a></li>
+                      <li class="pushy-link"><a href="#">Item 2</a></li>
+                      <li class="pushy-link"><a href="#">Item 3</a></li>
+                  </ul>
+              </li>
+              <li class="pushy-link"><a href="#">Item 1</a></li>
+              <li class="pushy-link"><a href="#">Item 2</a></li>
+              <li class="pushy-link"><a href="#">Item 3</a></li>
+              <li class="pushy-link"><a href="#">Item 4</a></li>
+          </ul>
+      </nav>
+    </div>
+
+    <!-- Site Overlay -->
+    <div class="site-overlay"></div>
+
+    <!-- Hero image -->
+    <div class="container-fluid hero_container">
+      <div class="overlay">
+        <div class="menu-btn pull-right visible-sm visible-xs">&#9776; Menu</div>
+      </div>
+    </div>
+
+
     <%= yield %>
   </body>
 </html>
