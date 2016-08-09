@@ -10,6 +10,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- below is code for Auth0 modal -->
+    <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
   </head>
 
   <body>
@@ -25,9 +28,9 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">login</a></li>
+            <li><button class="login_btn" onclick="lock.show();">login</button></li>
             <li>
-              <a class="btn btn-default btn-outline">Sign up</a>
+              <button onclick="lock.show();" class="btn btn-default btn-outline">Sign up</button>
             </li>
           </ul>
       </div><!-- /.container -->
@@ -105,24 +108,21 @@
       </div>
     </footer>
 
+
     <script>
 
-    $(document).ready(function() {
 
-      // Scrooll animation for navbar
-      $(window).scroll(function() {
-          var scroll = $(window).scrollTop();
-
-          if (scroll >= 50) {
-              $(".custom-nav1").addClass("scrolled");
-          } else {
-              $(".custom-nav1").removeClass("scrolled");
+        var lock = new Auth0Lock('eMAgoBH8Bou1eDuASFBPK5tBDrso3FOs', 'playback.auth0.com', {
+          auth: {
+            redirectUrl: 'http://localhost:3000/auth/auth0/callback',
+            responseType: 'code',
+            params: {
+              scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+            }
           }
-      });
+        });
 
-    });
 
     </script>
-
   </body>
 </html>
