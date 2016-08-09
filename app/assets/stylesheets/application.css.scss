@@ -117,6 +117,12 @@
        padding-left: 80px;
        padding-right: 80px;
        color: #fff;
+
+       @media screen and (max-width: $screen-sm) {
+         font-size: 2.6em;
+         padding-left: 10px;
+         padding-right: 10px;
+       }
      }
      h3 {
        font-family: $poppin;
@@ -124,6 +130,9 @@
        font-size: 2em;
        padding-top: 0;
        color: #fff;
+       @media screen and (max-width: $screen-sm) {
+         font-size: 1.2em;
+       }
      }
      .btn-danger {
        width: 260px;
@@ -139,6 +148,94 @@
          background:  lighten(#FF4E50,5%);
        }
 
+     }
+     .menu-btn {
+       color: #fff;
+       font-size: 3em;
+       position: absolute;
+       z-index: 5;
+     }
+   }
+ }
+
+
+ .mobile_cta_btns {
+     padding-top: 60px;
+
+     .col-xs-6 {
+       padding: 0;
+       ul {
+
+         li {
+           border-bottom: 1px solid rgba(29,39,53,.3);
+           border-top: 1px solid rgba(29,39,53,.3);
+           border-right: 1px solid rgba(29,39,53,.3);
+
+           .m_btns {
+             font-family: $poppin;
+             font-weight: 100;
+             font-size: 1.2em;
+             display: block;
+             color: #FFF;
+             background: transparent;
+             border-color: transparent;
+             padding-left: 35px;
+             text-decoration: none;
+             text-align: center;
+             transition: all 0.4s ease-out;
+             border-radius: 0;
+
+             &:hover {
+               background: #e74c3c;
+
+             }
+
+           }
+         }
+       }
+     }
+ }
+
+ footer {
+   background: #fff;
+   border-top: 1px solid #FF4E50;
+   padding-top: 50px;
+
+   .footer-brand {
+     font-family: $lobster;
+     font-size: 2.5em;
+     font-weight: 400;
+     color: #FF4E50;
+
+     @media screen and (max-width: $screen-xs) {
+       margin-bottom: 20px;
+     }
+   }
+
+   ul {
+     list-style: none;
+     padding-left: 0;
+     li {
+       padding: 5px 0;
+
+
+      a {
+        font-family: $poppin;
+        font-weight: 100;
+        color: #2c3e50;
+        text-decoration: none;
+        font-size: 1.2em;
+
+
+      }
+
+     }
+     .intro_quicklink {
+       font-family: $poppin;
+       font-weight: 400;
+       color: #2c3e50;
+       font-size: 1.3em;
+       padding-bottom: 10px;
      }
    }
  }

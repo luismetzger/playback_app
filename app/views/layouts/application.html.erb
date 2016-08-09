@@ -41,44 +41,28 @@
     <!-- Pushy Menu -->
     <div class="visible-sm visible-xs">
       <nav class="pushy pushy-left">
+
           <ul>
-              <li class="pushy-submenu">
-                  <a href="#">Submenu 1</a>
-                  <ul>
-                      <li class="pushy-link"><a href="#">Item 1</a></li>
-                      <li class="pushy-link"><a href="#">Item 2</a></li>
-                      <li class="pushy-link"><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
-              <li class="pushy-submenu">
-                  <a href="#">Submenu 2</a>
-                  <ul>
-                      <li class="pushy-link"><a href="#">Item 1</a></li>
-                      <li class="pushy-link"><a href="#">Item 2</a></li>
-                      <li class="pushy-link"><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
-              <li class="pushy-submenu">
-                  <a href="#">Submenu 3</a>
-                  <ul>
-                      <li class="pushy-link"><a href="#">Item 1</a></li>
-                      <li class="pushy-link"><a href="#">Item 2</a></li>
-                      <li class="pushy-link"><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
-              <li class="pushy-submenu">
-                  <a href="#">Submenu 4</a>
-                  <ul>
-                      <li class="pushy-link"><a href="#">Item 1</a></li>
-                      <li class="pushy-link"><a href="#">Item 2</a></li>
-                      <li class="pushy-link"><a href="#">Item 3</a></li>
-                  </ul>
-              </li>
-              <li class="pushy-link"><a href="#">Item 1</a></li>
-              <li class="pushy-link"><a href="#">Item 2</a></li>
-              <li class="pushy-link"><a href="#">Item 3</a></li>
-              <li class="pushy-link"><a href="#">Item 4</a></li>
+              <li class="pushy-link"><a href="#">About Us</a></li>
+              <li class="pushy-link"><a href="#">Contact Us</a></li>
           </ul>
+          <div class="mobile_cta_btns">
+            <div class="col-xs-6">
+              <ul>
+                <li>
+                  <a href="#" class="btn btn-primary m_btns">Login</a>
+                </li>
+              </ul>
+
+            </div>
+            <div class="col-xs-6">
+              <ul>
+                <li>
+                  <a href="#" class="btn btn-primary m_btns">Signup</a>
+                </li>
+              </ul>
+            </div>
+          </div>
       </nav>
     </div>
 
@@ -88,7 +72,7 @@
     <!-- Hero image -->
     <div class="container-fluid hero_container">
       <div class="overlay">
-        <div class="menu-btn pull-right visible-sm visible-xs">&#9776; Menu</div>
+        <div class="menu-btn visible-sm visible-xs col-xs-offset-10">&#9776;</div>
         <div class="col-md-6 col-md-offset-3">
           <h1 class="text-center">SHARE YOUR CONCERT MEMORIES</h1>
           <h3 class="text-center">And start creating your story.</h3>
@@ -99,5 +83,31 @@
 
 
     <%= yield %>
+
+    <footer>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-xs-12">
+              <a class="navbar-brand footer-brand" href="#">Playback</a>
+            </div>
+            <div class="col-md-8">
+              <div class="col-md-6">
+                <ul>
+                  <li class="intro_quicklink">Company</li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li class="intro_quicklink">Partners</li>
+                  <li><a href="#">Github Repo</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </footer>
   </body>
 </html>
