@@ -6,9 +6,123 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body>
+
+    <!-- Navbar -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar custom-nav1 hidden-sm hidden-xs">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Playback</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">login</a></li>
+            <li>
+              <a class="btn btn-default btn-outline">Sign up</a>
+            </li>
+          </ul>
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <!-- Pushy Menu -->
+    <div class="visible-sm visible-xs">
+      <nav class="pushy pushy-left">
+
+          <ul>
+              <li class="pushy-link"><a href="#">About Us</a></li>
+              <li class="pushy-link"><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="mobile_cta_btns">
+            <div class="col-xs-6">
+              <ul>
+                <li>
+                  <a href="#" class="btn btn-primary m_btns">Login</a>
+                </li>
+              </ul>
+
+            </div>
+            <div class="col-xs-6">
+              <ul>
+                <li>
+                  <a href="#" class="btn btn-primary m_btns">Signup</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+    </div>
+
+    <!-- Site Overlay -->
+    <div class="site-overlay"></div>
+
+    <!-- Hero image -->
+    <div class="container-fluid hero_container">
+      <div class="overlay">
+        <div class="menu-btn visible-sm visible-xs col-xs-offset-10">&#9776;</div>
+        <div class="col-md-6 col-md-offset-3">
+          <h1 class="text-center">SHARE YOUR CONCERT MEMORIES</h1>
+          <h3 class="text-center">And start creating your story.</h3>
+          <a href="#" class="btn btn-danger btn-lg center-block">Playback memories!</a>
+        </div>
+      </div>
+    </div>
+
+
     <%= yield %>
+
+    <footer>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-xs-12">
+              <a class="navbar-brand footer-brand" href="#">Playback</a>
+            </div>
+            <div class="col-md-8">
+              <div class="col-md-6">
+                <ul>
+                  <li class="intro_quicklink">Company</li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li class="intro_quicklink">Partners</li>
+                  <li><a href="#">Github Repo</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </footer>
+
+    <script>
+
+    $(document).ready(function() {
+
+      // Scrooll animation for navbar
+      $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+
+          if (scroll >= 50) {
+              $(".custom-nav1").addClass("scrolled");
+          } else {
+              $(".custom-nav1").removeClass("scrolled");
+          }
+      });
+
+    });
+
+    </script>
+
   </body>
 </html>
