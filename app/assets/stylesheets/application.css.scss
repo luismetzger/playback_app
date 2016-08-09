@@ -218,7 +218,8 @@
  footer {
    background: #fff;
    border-top: 1px solid #FF4E50;
-   padding-top: 50px;
+   padding: 50px;
+
 
    .footer-brand {
      font-family: $lobster;
@@ -226,7 +227,7 @@
      font-weight: 400;
      color: #FF4E50;
 
-     @media screen and (max-width: $screen-xs) {
+     @media screen and (max-width: $screen-md) {
        margin-bottom: 20px;
      }
    }
@@ -234,6 +235,11 @@
    ul {
      list-style: none;
      padding-left: 0;
+
+     @media screen and (max-width: $screen-md) {
+       margin: 0;
+
+     }
      li {
        padding: 5px 0;
 
@@ -244,6 +250,15 @@
         color: #2c3e50;
         text-decoration: none;
         font-size: 1.2em;
+
+        &:hover {
+          font-family: $poppin;
+          background: transparent;
+          font-weight: 100;
+          color: lighten(#2c3e50, 5%);
+          text-decoration: none;
+          font-size: 1.2em;
+        }
 
 
       }
@@ -390,5 +405,314 @@
   }
   &:visited {
       color: #fff;
+  }
+}
+
+
+#about_us {
+  .hero2_container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    background-image: url('team.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .overlay {
+      height: 650px;
+      width: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      background: rgba(44,62,80, 0.6);
+
+      h1 {
+        font-family: $poppin;
+        font-weight: 600;
+        font-size: 3.5em;
+        padding-top: 200px;
+        padding-left: 80px;
+        padding-right: 80px;
+        color: #fff;
+
+        @media screen and (max-width: $screen-sm) {
+          font-size: 2.6em;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      h3 {
+        font-family: $poppin;
+        font-weight: 100;
+        font-size: 2em;
+        padding-top: 0;
+        color: #fff;
+        @media screen and (max-width: $screen-sm) {
+          font-size: 1.2em;
+        }
+      }
+      .btn-danger {
+        width: 260px;
+        border-radius: 50px;
+        margin-top: 40px;
+        font-family: $poppin;
+        font-weight: 400;
+        font-size: 1.2em;
+        background: #FF4E50;
+        transition: all 0.4s ease-out;
+
+        &:hover {
+          background:  lighten(#FF4E50,5%);
+        }
+        &:visited {
+             color: #fff;
+         }
+
+      }
+      .menu-btn {
+        color: #fff;
+        font-size: 3em;
+        position: absolute;
+        z-index: 5;
+        cursor: pointer;
+      }
+    }
+  }
+  .intro_container {
+    padding: 80px 0 100px;
+
+    .about_intro {
+
+      @media screen and (max-width: $screen-sm) {
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      h2 {
+        font-family: $poppin;
+        font-weight: 400;
+        font-size: 2.5em;
+        color: #2c3e50;
+        padding-bottom: 10px;
+        @media screen and (max-width: $screen-sm) {
+          text-align: center;
+        }
+      }
+      p {
+        font-family: $poppin;
+        font-weight: 100;
+        font-size: 1.1em;
+        line-height: 1.6em;
+        color: #2c3e50;
+        opacity: 0.7;
+        @media screen and (max-width: $screen-sm) {
+          text-align: center;
+          padding: 0;
+          font-size: 1em;
+        }
+      }
+    }
+    .intro_img {
+      width: 300px;
+      @media screen and (max-width: $screen-sm) {
+        margin-top: 80px;
+      }
+    }
+  }
+
+  .about_masked {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    background-image: url('ga-paint.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .overlay {
+      height: 650px;
+      width: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      background: rgba(44,62,80, 0.8);
+
+      h2 {
+        font-family: $poppin;
+        font-weight: 300;
+        font-size: 2.4em;
+        padding-top: 200px;
+        color: #fff;
+        @media screen and (max-width: $screen-sm) {
+          padding-top: 120px;
+        }
+      }
+      p {
+        font-family: $poppin;
+        font-weight: 100;
+        font-size: 1.1em;
+        line-height: 1.8em;
+        padding-top: 0;
+        color: #fff;
+        padding-right: 250px;
+        opacity: 0.7;
+        @media screen and (max-width: $screen-sm) {
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-top: 40px;
+          font-size: 1em;
+          line-height: 2em;
+        }
+
+      }
+      .mid_img {
+        width: 400px;
+        padding-top: 200px;
+
+
+      }
+    }
+  }
+  .meet_intro_title {
+    padding: 80px 0 100px;
+    @media screen and (max-width: $screen-sm) {
+      padding: 80px 30px;
+    }
+
+    h2 {
+      font-family: $poppin;
+      font-weight: 100;
+      font-size: 2.5em;
+      color: #2c3e50;
+      padding-bottom: 10px;
+    }
+    p {
+      font-family: $poppin;
+      font-weight: 100;
+      font-size: 1.1em;
+      line-height: 2em;
+      color: #2c3e50;
+      opacity: 0.7;
+      padding: 0 200px;
+
+      @media screen and (max-width: $screen-sm) {
+        padding: 0;
+      }
+    }
+  }
+  .team_member_container {
+    width: 360px;
+    max-height: 360px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 100px;
+
+    @media screen and (max-width: $screen-md) {
+      margin: 0 auto 100px;
+    }
+
+
+    .team_member {
+      position: relative;
+      width: 100%;
+      height: 360px;
+
+    }
+
+    .overlay {
+      position: absolute;
+      height: 360px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(232, 126, 4, 0.2);
+      z-index: 1;
+      transition: all 0.4s ease;
+
+
+      .team_info {
+        opacity: 0;
+        position: absolute;
+        height: 360px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+
+        &:hover {
+          background: rgba(44,62,80, 0.8);
+          opacity: 1;
+
+          h2 {
+            font-family: $poppin;
+            font-weight: 300;
+            font-size: 2.4em;
+            color: #fff;
+            padding-top: 80px;
+
+          }
+          p {
+            font-family: $poppin;
+            font-weight: 100;
+            font-size: 1.1em;
+            line-height: 1.8em;
+            padding-top: 0;
+            color: #fff;
+
+          }
+        }
+      }
+
+    }
+  }
+  .testimonial {
+    background: #F4F5F7;
+    padding: 80px 0;
+
+    .test_img{
+      width: 100px;
+      height: 100px;
+      margin: 50px auto 0;
+    }
+    blockquote {
+      font-family: $poppin;
+      font-weight: 100;
+      font-size: 1.5em;
+      line-height: 2.1em;
+      font-style: italic;
+      color: #22313F;
+      opacity: 0.6;
+      text-align: center;
+      padding: 40px 0;
+      border-color: transparent;
+
+      @media screen and (max-width: $screen-md) {
+        font-size: 1em;
+        padding: 30px 20px 0;
+      }
+
+      cite {
+        font-family: $poppin;
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 2em;
+        color: #2C3E50;
+        padding: 20px 0;
+      }
+    }
   }
 }
