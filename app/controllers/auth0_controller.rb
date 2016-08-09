@@ -8,12 +8,13 @@ class Auth0Controller < ApplicationController
     ap first_name
     last_name = request.env['omniauth.auth']['info']['last_name']
     ap last_name
-    user_image = request.env['omniauth.auth']['info']['image']
-    ap user_image
+    profile_photo = request.env['omniauth.auth']['info']['image']
+    ap profile_photo
     # Redirect to the URL you want after successfull auth
 
-    #User.create ()
-    redirect_to '/'
+   User.create(:first_name => first_name, :last_name => last_name, :facebook_id => facebook_id, :profile_photo => profile_photo)
+    
+    redirect_to '/user/:id'
   end
 
   def failure
