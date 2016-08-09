@@ -1,12 +1,15 @@
 class WelcomeController < ApplicationController
 
-	def index
+
+	#Landing page "/" route
+	def index 
 
 		render :index
 	end
 
+	#About us page "about_us" route
 	def about_us
-		render :about_us
+
 	end
 
 end
