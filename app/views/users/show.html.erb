@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+  <img class="avatar" src="<%= @user[:info][:image] %>"/>
+  <h2>Welcome <%= @user[:info][:name] %></h2>
+</div>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

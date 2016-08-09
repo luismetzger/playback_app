@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = session[:userinfo]
   end
 
   # GET /users/new
@@ -69,6 +70,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:asset)
+
+      # params.fetch(:user, {})
     end
 end
