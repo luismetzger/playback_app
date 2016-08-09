@@ -20,6 +20,9 @@ $menu_width: 300px !default;
     -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
 
     ul {
+      margin: 10px 0 10px;
+      list-style: none;
+      padding: 20px 0 20px 0;
 
       li {
           border-bottom: 1px solid rgba(29,39,53,.3);

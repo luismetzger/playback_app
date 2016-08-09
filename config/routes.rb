@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root :to => "welcome#index", :as => "welcome"
 
-  get '/about_us', to: "welcome#about_us", as: "about_us"
+  get '/about-us', to: "welcome#about_us", as: "about_us"
 
 end
