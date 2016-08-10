@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   #Auth0 routes
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   root :to => "welcome#index", :as => "welcome"
 
   get '/about-us', to: "welcome#about_us", as: "about_us"
+  delete '/sessions', to: 'sessions#destroy', as: 'logout'
 
 end

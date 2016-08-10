@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Playback</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- below is code for Auth0 modal -->
+    <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
+  </head>
+
+  <body>
+
+  
+
+
+
+
+    <%= yield %>
+
+
+
+    <script>
+
+
+        var lock = new Auth0Lock('eMAgoBH8Bou1eDuASFBPK5tBDrso3FOs', 'playback.auth0.com', {
+          auth: {
+            redirectUrl: 'http://localhost:3000/auth/auth0/callback',
+            responseType: 'code',
+            params: {
+              scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+            }
+          }
+        });
+
+
+    </script>
+  </body>
+</html>
