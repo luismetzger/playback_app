@@ -1,6 +1,7 @@
 class ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
 
+  layout "user"
 
   # GET /concerts
   # GET /concerts.json
@@ -16,6 +17,7 @@ class ConcertsController < ApplicationController
   # GET /concerts/new
   def new
     @concert = Concert.new
+    puts session[:user_id]
   end
 
   # GET /concerts/1/edit
@@ -70,6 +72,7 @@ class ConcertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def concert_params
-      params.fetch(:concert, {})
+      #params.fetch(:concert, {})
+      params.require(:concert).permit(:band, :venue, :date, :notes, :user_id)
     end
 end
