@@ -1,4 +1,6 @@
 class PaperclipImage < ApplicationRecord
+	belongs_to :concert
+
 	has_attached_file :asset, styles: { 
 		medium: '300x300>', 
 		small: '140X140>',
