@@ -16,6 +16,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  @import "partials/*";
 
  html, body{
@@ -105,9 +107,10 @@
  /* Navbar non-logged in user */
  .custom-nav2 {
    margin-bottom: 0;
-   padding: 25px 0;
-   position: absolute;
-   background: transparent;
+   padding: 0;
+   position: relative;;
+   background: #fff;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
    width: 100%;
    z-index: 2;
    -webkit-transition: all 0.6s ease-out;
@@ -116,28 +119,33 @@
     -ms-transition: all 0.6s ease-out;
     transition: all 0.6s ease-out;
 
-    a {
-      font-family: $lobster;
-      font-size: 2.5em;
-      font-weight: 400;
-      color: #fff;
-      text-shadow: 2px 2px #000;
-      margin-top: 20px;
+    .navbar-header {
+      display: inline-block;
 
+      a {
+        font-family: $lobster;
+        font-size: 2.5em;
+        font-weight: 400;
+        color: #FF4E50;
+        margin-top: 20px;
+        padding-top: 0;
+
+      }
     }
+
 
     ul {
       li {
 
         .login_btn {
           font-family: $poppin;
-          font-size: 1.2em;
+          font-size: 1.3em;
           font-weight: 300;
-          color: #fff;
+          color: #2C2C2C;
           background: transparent;
           transition: all 0.4s ease-out;
           border-color: transparent;
-          padding: 15px 20px 0;
+          padding: 8px 20px 0;
 
           &:hover {
             background: transparent;
@@ -149,7 +157,7 @@
           font-family: $poppin;
           font-size: 1.2em;
           font-weight: 300;
-          color: #fff;
+          color: #2C2C2C;
           text-shadow: none;
           margin-top: 20px;
           margin-right: 10px;
@@ -163,17 +171,83 @@
         }
         .btn-outline {
           background: transparent;
-          border: 1px solid #fff;
+          border: 1px solid #2C2C2C;
           border-radius: 50px;
           padding: 15px 30px;
           transition: all 0.4s ease-out;
 
           &:hover {
-            background: #fff;
+            background: #2C2C2C;
             color: #2c3e50;
           }
         }
       }
+    }
+
+    .dropdown {
+      padding-top: 10px;
+      padding-right: 20px;
+      img {
+        width: 50px;
+      }
+
+      .dropdown-menu {
+         margin-top: 12px;
+         background-color: #FF4E50;
+
+         li {
+
+           &:hover {
+             background: darken(#FF4E50, 20%);
+           }
+
+           a, .edit_btn {
+             font-family: "Lobster", cursive;
+             font-size: 1.8em;
+             padding: 5px 10px;
+             margin-top: 0;
+             color: #fff;
+
+             &:hover {
+               color: #fff;
+               background: darken(#FF4E50, 20%);
+             }
+           }
+         }
+      }
+    }
+    .nav-links {
+      list-style: none;
+
+      li {
+
+        .btn {
+          color: #FFF;
+          border-radius: 4px;
+        }
+        #create_btn {
+          background: #e74c3c;
+          border: none;
+          padding: 6px 25px;
+          margin-top: 10px;
+
+          &:hover {
+            background: darken(#e74c3c, 15%);
+          }
+
+          span {
+            color: #F4F5F7;
+            font-size: 1.8em;
+            padding: 8px 0;
+          }
+        }
+      }
+    }
+    .menu-btn {
+      color: #333;
+      font-size: 3em;
+      z-index: 5;
+      cursor: pointer;
     }
  }
 
@@ -288,6 +362,46 @@
          }
        }
      }
+ }
+
+ .user_pushy {
+
+   .mobile_profile_container {
+     padding: 20px 0;
+     border-bottom: 1px solid rgba(29, 39, 53, 0.3);
+
+     img {
+       width: 165px;
+     }
+     .view_profile_link {
+       display: block;
+       color: #fff;
+       padding: 20px 0;
+       font-family: $poppin;
+       font-weight: 100;
+       font-size: 1em;
+
+       &:hover {
+         background: transparent;
+         color: #FF4E50;
+         text-decoration: none;
+       }
+     }
+   }
+   .user_mobile_list{
+       margin: 245px 0 10px;
+
+       li {
+
+         a {
+            padding: 25px 30px;
+            font-size: 1.5em;
+            i {
+              padding-right: 15px;
+            }
+         }
+       }
+   }
  }
 
  footer {
@@ -787,6 +901,134 @@
         line-height: 2em;
         color: #2C3E50;
         padding: 20px 0;
+      }
+    }
+  }
+}
+
+/* Logged in user dashboard */
+#logged_in_user_home {
+  background: #FAFAFA;
+  margin: 0;
+  padding: 50px 0 80px;
+
+  .profile_card {
+    position: relative;
+    width: 350px;
+    height: 310px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+
+    .overlay {
+      position: absolute;
+      border-radius: 5px;
+      height: 310px;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(44,62,80, 0.6);
+      z-index: 1;
+    }
+    .info_section {
+      position: absolute;
+      width: 100%;
+      height: 155px;
+      background: #fff;
+      z-index: 2;
+      top: 155px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      .profile_name {
+        font-family: $poppin;
+        font-weight: 100;
+        padding-top: 26px;
+        font-size: 1.1em;
+      }
+      .profile_handle {
+        font-family: $poppin;
+        font-weight: 100;
+        padding-top: 0;
+        font-size: 0.9em;
+        color: rgba(44,62,80, 0.5);
+        padding-bottom: 10px;
+      }
+      .social_stats {
+
+        h3 {
+          margin: 0;
+          font-size: 1.2em;
+          font-family: $poppin;
+          font-weight: 500;
+        }
+        p {
+          margin: 0;
+          font-size: 1em;
+          font-family: $poppin;
+          font-weight: 100;
+          color: rgba(44,62,80, 0.5);
+          text-transform: uppercase;
+        }
+      }
+    }
+    img {
+      border: 1px solid #fff;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      position: absolute;
+      z-index: 3;
+      top: 90px;
+      left: 125px;
+      background: rgba(44,62,80, 0.6);
+    }
+  }
+
+  .follow_users {
+    position: relative;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+
+    .list-group {
+      margin-bottom: 0;
+      padding-left: 0;
+      margin: 0;
+
+      .list-group-item {
+        border: 1px solid rgba(44,62,80, 0.2);
+      }
+
+      .followers_title {
+        padding: 20px 0;
+        color: rgba(44,62,80, 0.6);
+        font-size: 1.2em;
+        font-family: $poppin;
+        font-weight: 100;
+
+
+      }
+      .other_user {
+        height: 60px;
+
+        img {
+          width: 50px;
+          border: 1px solid #fff;
+        }
+        h4 {
+          font-size: 1.2em;
+          font-family: $poppin;
+          font-weight: 500;
+          padding-left: 20px;
+        }
+        p {
+          font-size: 1em;
+          font-family: $poppin;
+          font-weight: 100;
+          padding-left: 20px;
+        }
+        .badge {
+            margin-top: 16px;
+        }
       }
     }
   }
