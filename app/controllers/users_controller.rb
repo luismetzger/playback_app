@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  layout 'user'
+
   # GET /users
   # GET /users.json
   def index
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = session[:userinfo]
+    # @user = session[:userinfo]
     ap @user
   end
 
