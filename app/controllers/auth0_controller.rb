@@ -19,8 +19,9 @@ class Auth0Controller < ApplicationController
         session[:user_id] = @user.id
         redirect_to "/users/#{@user.id}"
       else 
-        p "didn't work"
-        user = User.create(:first_name => first_name, :last_name => last_name, :facebook_id => facebook_id, :profile_photo => profile_photo)
+        @user = User.create(:first_name => first_name, :last_name => last_name, :facebook_id => facebook_id, :profile_photo => profile_photo)
+        session[:user_id] = @user.id
+        redirect_to "/users/#{@user.id}"
       end
   end
 
