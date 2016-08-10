@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :concerts
   #Auth0 routes
   get "/auth/auth0/callback" => "auth0#callback"
   get "/auth/failure" => "auth0#failure"
