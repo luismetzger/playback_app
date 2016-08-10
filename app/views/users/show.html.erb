@@ -1,13 +1,119 @@
+<div class="site-overlay"></div>
+<section id="logged_in_user_home">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="profile_card" style="background-image: url('http://lorempixel.com/600/400/');">
+          <img class="img-circle" src="http://lorempixel.com/100/100/" alt="" />
+          <div class="info_section">
+            <h3 class="text-center profile_name">Kayce Danna</h3>
+            <p class="text-center profile_handle">@kaycedanna</p>
 
-<p id="notice"><%= notice %></p>
+            <div class="social_stats">
+              <div class="col-xs-4">
+                <h3 class="text-left">5</h3>
+                <p class="text-left">posts</h3>
+              </div>
+              <div class="col-xs-4">
+                <h3 class="text-left">3</h3>
+                <p class="text-left">followers</h3>
+              </div>
+              <div class="col-xs-4">
+                <h3 class="text-left">3</h3>
+                <p class="text-left">following</h3>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="post_feed">
 
-<div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="follow_users">
+          <ul class="list-group">
+            <li class="list-group-item text-center followers_title">
+              SUGGESTIONS FOR YOU
+            </li>
+            <li class="list-group-item">
+              <div class="other_user">
+                <div class="col-xs-2">
+                  <img class="img-circle" src="http://lorempixel.com/100/100/" alt="" />
+                </div>
+                <div class="col-xs-8">
+                  <h4>Lil' Jon</h4>
+                  <p>@liljon</p>
+                </div>
+                <div class="col-xs-2">
+                  <span class="btn btn-outline"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                </div>
 
-  <h2>Welcome <%= @user.first_name  %> <%= @user.last_name %></h2>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="other_user">
+                <div class="col-xs-2">
+                  <img class="img-circle" src="http://lorempixel.com/100/100/" alt="" />
+                </div>
+                <div class="col-xs-8">
+                  <h4>Lil' Jon</h4>
+                  <p>@liljon</p>
+                </div>
+                <div class="col-xs-2">
+                  <span class="btn btn-outline"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                </div>
 
-</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="other_user">
+                <div class="col-xs-2">
+                  <img class="img-circle" src="http://lorempixel.com/100/100/" alt="" />
+                </div>
+                <div class="col-xs-8">
+                  <h4>Lil' Jon</h4>
+                  <p>@liljon</p>
+                </div>
+                <div class="col-xs-2">
+                  <span class="btn btn-outline"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                </div>
+
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="other_user">
+                <div class="col-xs-2">
+                  <img class="img-circle" src="http://lorempixel.com/100/100/" alt="" />
+                </div>
+                <div class="col-xs-8">
+                  <h4>Lil' Jon</h4>
+                  <p>@liljon</p>
+                </div>
+                <div class="col-xs-2">
+                  <span class="btn btn-outline"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                </div>
+
+              </div>
+            </li>
+            <li class="list-group-item text-center followers_title">
+              SEE ALL
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-<%= link_to 'Logout', logout_path, method: :delete, :class => 'btn btn-default logout-btn custom_logout'%>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+
+
+
+
+<!-- <p id="notice"><%= notice %></p>
+<%= link_to 'Back', users_path %> -->
