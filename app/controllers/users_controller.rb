@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = session[:userinfo]
+    ap @user
   end
 
   # GET /users/new
