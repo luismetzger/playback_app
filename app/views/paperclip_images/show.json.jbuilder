@@ -1,0 +1,1 @@
+json.partial! "paperclip_images/paperclip_image", paperclip_image: @paperclip_image

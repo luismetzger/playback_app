@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Playback</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- below is code for Auth0 modal -->
+    <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
+  </head>
+
+  <body>
+
+
+
+    <!-- Navbar -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar custom-nav2">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Playback</a>
+        </div>
+
+        <!-- Dropdown user options -->
+        <div class="dropdown pull-right hidden-xs hidden-sm">
+          <img id="user_drop" class="img-circle" src="http://lorempixel.com/100/100/" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+
+          <ul class="dropdown-menu" aria-labelledby="user_drop">
+            <li><%= link_to 'Log out', logout_path, method: :delete, :class => 'login_btn'%></li>
+            <li><%= link_to 'Edit', edit_user_path(:user_id), :class => 'edit_btn' %> </li>
+          </ul>
+
+        </div>
+
+        <ul class="nav-links pull-right hidden-xs hidden-sm">
+          <li><button type="button" id="create_btn" class="btn btn-danger" name="button"><span class="fa fa-plus fa-lg"></span></button></li>
+        </ul>
+
+        <div class="menu-btn visible-sm visible-xs pull-right">&#9776;</div>
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <!-- Pushy Menu -->
+    <div class="visible-sm visible-xs">
+      <nav class="pushy pushy-left user_pushy">
+        <div class="col-xs-12">
+          <div class="mobile_profile_container">
+            <img class="img-circle center-block" src="http://lorempixel.com/200/200/" alt="" />
+            <a class="text-center view_profile_link" href="#">View Profile</a>
+          </div>
+
+        </div>
+
+          <ul class="user_mobile_list">
+              <li class="pushy-link"><a href="#"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Create</a></li>
+              <li class="pushy-link"><a href="#"><i class="fa fa-flag-o" aria-hidden="true"></i> Help</a></li>
+              <li class="pushy-link"><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+              <li class="pushy-link"><a href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
+          </ul>
+  
+      </nav>
+    </div>
+
+
+
+    <%= yield %>
+
+
+
+    <script>
+
+
+        var lock = new Auth0Lock('eMAgoBH8Bou1eDuASFBPK5tBDrso3FOs', 'playback.auth0.com', {
+          auth: {
+            redirectUrl: 'http://localhost:3000/auth/auth0/callback',
+            responseType: 'code',
+            params: {
+              scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+            }
+          }
+        });
+
+
+    </script>
+  </body>
+</html>

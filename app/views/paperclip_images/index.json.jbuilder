@@ -1,0 +1,1 @@
+json.array! @paperclip_images, partial: 'paperclip_images/paperclip_image', as: :paperclip_image
