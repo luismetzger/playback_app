@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
 //= require turbolinks
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 
 
-(function(j$){
+$(document).on('turbolinks:load', function() {
 
 
   var pushy = $('.pushy'), //menu css class
@@ -456,4 +456,4 @@
   );
 
 
- })(jQuery);
+});
