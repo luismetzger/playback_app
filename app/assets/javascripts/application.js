@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(document).on('turbolinks:load', function() {
+(function(j$){
 
 
   var pushy = $('.pushy'), //menu css class
@@ -456,4 +456,4 @@ $(document).on('turbolinks:load', function() {
   );
 
 
-});
+ })(jQuery);
