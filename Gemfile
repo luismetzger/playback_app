@@ -38,6 +38,11 @@ gem 'omniauth-auth0', '~> 1.4.1'
 
 gem 'dotenv-rails'
 
+#gen to run AWS
+gem 'aws-sdk', '~> 2.3'
+
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
+
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
