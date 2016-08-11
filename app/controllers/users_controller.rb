@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   def show
     #come back and find out how to show the most recent concert posts
     @user = User.find(params[:id])
-    @concerts = Concert.all
-    ap @concerts
+    @user_concerts = @user.concerts
+    p @user_shows
   end
 
   # GET /users/new

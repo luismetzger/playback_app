@@ -18,7 +18,8 @@ users = [
 		last_name: "Danna", 
 		current_city: "Denver",
 		facebook_id: "10101560694417787",
-		email: "kayce.danna@gmail.com"
+		email: "kayce.danna@gmail.com",
+		profile_photo: "https://scontent.xx.fbcdn.net/v/t1.0-1/p160x160/11709737_10101184563332497_1719156922581032238_n.jpg?oh=9d0495308239b76ffae93aa6fb631b2d&oe=581AB836"
 		),
 	User.create(
 		first_name: "Kyle", 
