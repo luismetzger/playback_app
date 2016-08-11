@@ -36,6 +36,8 @@ gem 'omniauth', '~> 1.3.1'
 
 gem 'omniauth-auth0', '~> 1.4.1'
 
+gem 'dotenv-rails'
+
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
