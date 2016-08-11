@@ -907,145 +907,404 @@
 }
 
 /* Logged in user dashboard */
-#logged_in_user_home {
+
+#about_body {
   background: #FAFAFA;
-  margin: 0;
-  padding: 50px 0 80px;
 
-  .profile_card {
-    position: relative;
-    width: 350px;
-    height: 310px;
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  #logged_in_user_home {
+    background: #FAFAFA;
+    margin: 0;
+    padding: 50px 0 80px;
 
-    .overlay {
-      position: absolute;
-      border-radius: 5px;
+    .profile_card {
+      width: 350px;
       height: 310px;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(44,62,80, 0.6);
-      z-index: 1;
-    }
-    .info_section {
-      position: absolute;
-      width: 100%;
-      height: 155px;
-      background: #fff;
-      z-index: 2;
-      top: 155px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-
-      .profile_name {
-        font-family: $poppin;
-        font-weight: 100;
-        padding-top: 26px;
-        font-size: 1.1em;
-      }
-      .profile_handle {
-        font-family: $poppin;
-        font-weight: 100;
-        padding-top: 0;
-        font-size: 0.9em;
-        color: rgba(44,62,80, 0.5);
-        padding-bottom: 10px;
-      }
-      .social_stats {
-
-        h3 {
-          margin: 0;
-          font-size: 1.2em;
-          font-family: $poppin;
-          font-weight: 500;
-        }
-        p {
-          margin: 0;
-          font-size: 1em;
-          font-family: $poppin;
-          font-weight: 100;
-          color: rgba(44,62,80, 0.5);
-          text-transform: uppercase;
-        }
-      }
-    }
-    img {
-      border: 1px solid #fff;
+      border-radius: 5px;
       box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-      position: absolute;
-      z-index: 3;
-      top: 90px;
-      left: 125px;
-      background: rgba(44,62,80, 0.6);
-    }
-  }
+      position: fixed;
+      margin-left: 50px;
 
-  .follow_users {
-    position: relative;
-    width: 300px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-
-    .list-group {
-      margin-bottom: 0;
-      padding-left: 0;
-      margin: 0;
-
-      .list-group-item {
-        border: 1px solid rgba(44,62,80, 0.2);
-
-        .btn-outline {
-           border: 1px solid #3B8EDE;
-           padding: 8px 18px;
-
-           &:hover {
-             border-color: darken(#3B8EDE, 10%);
-             background: darken(#fff, 2%);
-
-           }
-
-           i {
-              color: #3B8EDE;
-           }
-        }
+      .overlay {
+        position: absolute;
+        border-radius: 5px;
+        height: 310px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(44,62,80, 0.6);
+        z-index: 1;
       }
+      .info_section {
+        position: absolute;
+        width: 100%;
+        height: 155px;
+        background: #fff;
+        z-index: 2;
+        top: 155px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
 
-
-      .followers_title {
-        padding: 20px 0;
-        color: rgba(44,62,80, 0.6);
-        font-size: 1.2em;
-        font-family: $poppin;
-        font-weight: 100;
-
-
-      }
-      .other_user {
-        height: 60px;
-
-        img {
-          width: 50px;
-          border: 1px solid #fff;
-        }
-        h4 {
-          font-size: 1.2em;
-          font-family: $poppin;
-          font-weight: 500;
-          padding-left: 20px;
-        }
-        p {
-          font-size: 1em;
+        .profile_name {
           font-family: $poppin;
           font-weight: 100;
-          padding-left: 20px;
+          padding-top: 26px;
+          font-size: 1.1em;
         }
-        .badge {
-            margin-top: 16px;
+        .profile_handle {
+          font-family: $poppin;
+          font-weight: 100;
+          padding-top: 0;
+          font-size: 0.9em;
+          color: rgba(44,62,80, 0.5);
+          padding-bottom: 10px;
+        }
+        .social_stats {
+
+          h3 {
+            margin: 0;
+            font-size: 1.2em;
+            font-family: $poppin;
+            font-weight: 500;
+          }
+          p {
+            margin: 0;
+            font-size: 1em;
+            font-family: $poppin;
+            font-weight: 100;
+            color: rgba(44,62,80, 0.5);
+            text-transform: uppercase;
+          }
+        }
+      }
+      img {
+        border: 1px solid #fff;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        position: absolute;
+        z-index: 3;
+        top: 90px;
+        left: 125px;
+        background: rgba(44,62,80, 0.6);
+      }
+    }
+
+    .follow_users {
+      width: 300px;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      position: fixed;
+      margin-left: 50px;
+
+      .list-group {
+        margin-bottom: 0;
+        padding-left: 0;
+        margin: 0;
+
+        .list-group-item {
+          border: 1px solid rgba(44,62,80, 0.2);
+          padding: 15px 15px;
+
+          .btn-outline {
+             border: 1px solid #3B8EDE;
+             padding: 8px 18px;
+
+             &:hover {
+               border-color: darken(#3B8EDE, 10%);
+               background: darken(#fff, 2%);
+
+             }
+
+             i {
+                color: #3B8EDE;
+                font-size: 1.5em;
+             }
+          }
+        }
+
+
+        .followers_title {
+          padding: 20px 0;
+          color: rgba(44,62,80, 0.6);
+          font-size: 1.2em;
+          font-family: $poppin;
+          font-weight: 100;
+
+
+        }
+        .other_user {
+          height: 60px;
+
+          img {
+            width: 50px;
+            border: 1px solid #fff;
+          }
+          h4 {
+            font-size: 1.2em;
+            font-family: $poppin;
+            font-weight: 500;
+            padding-left: 20px;
+          }
+          p {
+            font-size: 1em;
+            font-family: $poppin;
+            font-weight: 100;
+            padding-left: 20px;
+          }
+          .badge {
+              margin-top: 16px;
+          }
+        }
+
+        .more_container {
+
+          &:hover {
+
+            background: darken(#fff, 2%);
+
+          }
+          button {
+            font-family: $poppin;
+            font-size: 1.1em;
+            font-weight: 300;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 0 solid transparent;
+          }
         }
       }
     }
+    .company_info {
+      background: transparent;
+      border: 0 solid transparent;
+      position: fixed;
+      margin-top: 520px;
+
+      ul {
+        list-style: none;
+
+        li {
+          display: inline;
+          padding: 0 15px;
+
+          a {
+            font-family: $poppin;
+            font-size: 1.2em;
+            font-weight: 100;
+            color: darken(#FAFAFA, 40%);
+
+            &:hover {
+              background: transparent;
+              color: darken(#FAFAFA, 60%);
+            }
+          }
+        }
+      }
+      p {
+        font-family: $poppin;
+        font-size: 1em;
+        font-weight: 100;
+        color: #949494;
+        text-align: center;
+        padding: 20px 0;
+      }
+    }
   }
+
+
+  /* Post Feed Card and  modal */
+  .module {
+    transition: all 0.2s cubic-bezier(.7,.2,.17,1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow:hidden;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto 50px;
+    background: hsla(0,0%,100%,0.5);
+    overflow:hidden;
+  }
+
+  .module:after {
+    animation: dots 3s infinite;
+    transition: all 0.2s 0.2s cubic-bezier(.7,.2,.17,1);
+    content:'...';
+    display:block;
+    width:100%;
+    position: absolute;
+    bottom:0.4em;
+    right:1.2em;
+    font-size: 1.8em;
+    color: #4ECDC4;
+    text-align:right;
+  }
+
+  .module:hover:after {
+    animation: none;
+    opacity:0;
+  }
+
+  .module:hover {
+    background: hsla(0,0%,100%,1);
+    transform: scale(1.02);
+    box-shadow: 0 26px 6px -16px hsla(0,0%,0%,0.1);
+  }
+
+  .module__img {
+    transition: all 0.7s 0.2s cubic-bezier(.7,.2,.17,1);
+    line-height:20px;
+    font-weight:bold;
+    position:relative;
+    box-sizing:border-box;
+    padding:2em;
+    color: hsla(0,0%,100%,0.85);
+    height: 100%;
+    background: #2c3e50 url('http://technode.com/wp-content/uploads/2016/01/live-concert-cstreaming-china-768x506.jpg');
+    background-size: cover;
+    background-position: center center;
+    line-height:50px;
+  }
+
+  .module__img:after {
+    transition: all 1s 0.2s cubic-bezier(.7,.2,.17,1);
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:100%;
+    height:100%;
+    background:#2c3e50;
+    opacity:0;
+    z-index:0;
+  }
+
+  .module:hover .module__img {
+    height:100px;
+  }
+
+  .module:hover .module__img:after {
+    opacity:0.6;
+  }
+
+  .module__meta, .module__share {
+    opacity:0;
+    width:50%;
+    float:left;
+    position:relative;
+    z-index:1;
+    font-size: 1.8em;
+    font-family: $lobster;
+    color: #fff;
+    font-weight: 100;
+  }
+
+  .module__meta {
+    transition: 0.7s 0.2s cubic-bezier(.7,.2,.17,1);
+    font-size: 1.6em;
+  }
+
+  .module__share {text-align:right;}
+
+  .module__share i {
+    opacity:0;
+    margin-left:10px;
+    transition: 0.2s 0.7s cubic-bezier(.42,1.34,.8,2);
+    transform: scale(0);
+  }
+
+  .module__share i:last-child {transition-delay: 0.9s;}
+
+  .module:hover i {
+    opacity:0.9;
+    transform: scale(1);
+  }
+
+  .module__share i:hover {
+    color: #F62459;
+    transition-delay: 0s;
+  }
+
+  .module:hover .module__meta,
+  .module:hover .module__share {opacity:1;}
+
+  .module:hover .module__share {transition-delay: 0.6s;}
+
+  .module__content {
+    transition: background-position 1s 0.2s cubic-bezier(.7,.2,.17,1);
+    box-sizing:border-box;
+    padding: 0 2em 2em 2em;
+    height: 250px;
+
+    background-size: 100% 100px, 100% 5px;
+    background-position:center 300px, center -5px;
+    background-repeat:no-repeat;
+  }
+
+  .module:hover .module__content {
+    height: 400px;
+    overflow:scroll;
+    background-position:center 300px, center 0;
+  }
+
+  .module__title {
+    transition: all 0.8s 0.2s cubic-bezier(.7,.2,.17,1);
+    font-family: $poppin;
+    line-height:1.1em;
+    color:#e74c3c;
+    font-size: 1.8em;
+    margin-bottom: 1.2em;
+    background-image: linear-gradient(to right, #34495e, #2c3e50);
+    background-size: 10% 2px;
+    background-repeat:no-repeat;
+    background-position: left bottom;
+    padding: 2em 0 1em;
+    width:100%;
+  }
+
+  .module:hover .module__title {
+    margin-bottom: 1.6em;
+    padding-bottom: 1.6em;
+    background-position: center bottom;
+  }
+
+  .module__txt {
+    transition: all 0.8s 0.2s cubic-bezier(.7,.2,.17,1);
+    color: #bbb;
+    font-family: $poppin;
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 0.6em;
+  }
+
+  .module:hover  .module__txt--abstract {
+    font-family: $poppin;
+    font-weight: 400;
+    font-size: 1.4em;
+    color:#2c3e50;
+    opacity: 0.9;
+    margin-bottom: 2em;
+  }
+
+  .module__txt--description {
+    opacity:0;
+    line-height:1.8em;
+    transition: all 0.8s 0.5s cubic-bezier(.7,.2,.17,1);
+  }
+
+  .moda_link a {
+    box-sizing: border-box;
+    display:inline-block;
+    max-width:100%;
+    border:1px solid #e74c3c;
+    padding: 1em;
+    margin: 0.8em 0;
+  }
+
+
+  .module:hover .module__txt--description {
+    opacity:1
+  }
+
 }
