@@ -34,8 +34,9 @@
 
           <ul class="dropdown-menu" aria-labelledby="user_drop">
             <li><%= link_to 'Log out', logout_path, method: :delete, :class => 'login_btn'%></li>
-            <li><%= link_to 'Edit', edit_user_path(@user), :class => 'edit_btn' %> </li>
+            <li><%= link_to 'Edit', edit_user_path(:user_id), :class => 'edit_btn' %> </li>
           </ul>
+
         </div>
 
         <ul class="nav-links pull-right hidden-xs hidden-sm">
