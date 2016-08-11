@@ -17,6 +17,7 @@ class ConcertsController < ApplicationController
   # GET /concerts/new
   def new
     @concert = Concert.new
+    @paperclip_image = PaperclipImage.new
     puts session[:user_id]
   end
 
@@ -27,7 +28,10 @@ class ConcertsController < ApplicationController
   # POST /concerts
   # POST /concerts.json
   def create
+    ap params
+
     @concert = Concert.new(concert_params)
+    @paperclip_image = Paperclip_image.new(paperclip_image_params)
 
     respond_to do |format|
       if @concert.save

@@ -33,11 +33,16 @@
      <div class="field">
       <%= f.text_field :user_id, :value => session[:user_id], :type=>"hidden" %>
     </div>
-
-
+    
+    <input html="{:class=>&quot;form-control&quot;}" type="file" name="paperclip_image[asset]" id="paperclip_image_asset">
+    
     <div class="actions">
       <%= f.submit %>
     </div>
+
+
   <% end %>
+
+
 
 </div>
