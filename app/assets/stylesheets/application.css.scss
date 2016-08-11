@@ -996,7 +996,23 @@
 
       .list-group-item {
         border: 1px solid rgba(44,62,80, 0.2);
+
+        .btn-outline {
+           border: 1px solid #3B8EDE;
+           padding: 8px 18px;
+
+           &:hover {
+             border-color: darken(#3B8EDE, 10%);
+             background: darken(#fff, 2%);
+
+           }
+
+           i {
+              color: #3B8EDE;
+           }
+        }
       }
+
 
       .followers_title {
         padding: 20px 0;
