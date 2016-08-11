@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.3.0"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -38,6 +38,11 @@ gem 'omniauth', '~> 1.3.1'
 gem 'omniauth-auth0', '~> 1.4.1'
 
 gem 'dotenv-rails'
+
+#gen to run AWS
+gem 'aws-sdk', '~> 2.3'
+
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
 
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
