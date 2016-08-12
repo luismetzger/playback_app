@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'dotenv-rails'
 gem 'font-awesome-sass'
 
 gem 'awesome_print'
