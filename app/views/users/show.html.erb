@@ -35,7 +35,9 @@
                 <!-- Post 1 -->
         <% @user_concerts.each do |concert| %>
         <div class="module">
-            <div class="module__img">
+          <% unless concert.paperclip_images.first.nil? %>
+            <img class="module__img" src="<%=concert.paperclip_images.first.asset.url%>"/>  
+          <% end %>    
               <div class="module__meta"><%= concert.date %> </div>
               <div class="module__share">
                 <i class="fa fa-heart" aria-hidden="true"></i>

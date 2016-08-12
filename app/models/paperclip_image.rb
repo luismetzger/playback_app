@@ -6,6 +6,8 @@ class PaperclipImage < ApplicationRecord
 		small: '140X140>',
 		thumb: '64x64!' 
 	}
+
+
   	validates_attachment_content_type :asset, content_type: /\Aimage\/.*\Z/
 
 end
