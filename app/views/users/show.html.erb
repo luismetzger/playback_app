@@ -32,25 +32,30 @@
       <div class="col-lg-4 col-lg-offset-2 col-md-6 col-md-offset-3">
         <div class="post_feed">
                 <!-- Post 1 -->
-          <% @user_concerts.each do |concert| %>
-            <div class="module">
-              <% unless concert.paperclip_images.first.nil? %>
-                <img class="module__img" src="<%=concert.paperclip_images.first.asset.url%>"/>
-              <% end %>
-                  <div class="module__meta"><%= concert.date %> </div>
-                  <div class="module__share">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                    <i class="fa fa-share" aria-hidden="true"></i>
+                <% @user_concerts.each do |concert| %>
+                <div class="module">
+                  <% if @paperclip_images.nil? %>
+                    <div class="module__img" style="background: url('http://loremflickr.com/600/400'); background-size: cover;background-position: center center;">
+                  <% else %>
+                    <img class="module__img" style="background: url('<%= @paperclip_images.first.asset.url %>'');background-size: cover;background-position: center center;" />
+                  <% end %>
+                      <div class="module__meta"><%= concert.date %></div>
+                      <div class="module__share">
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div class="module__content">
+                      <h2 class="module__title text-center"><%= concert.band %></h2>
+                      <p class="module__txt module__txt--abstract text-center"><%= concert.venue %></p>
+                      <p class="module__txt module__txt--description">
+                        <%= concert.notes %>
+                      </p>
                   </div>
-            </div>
-            <div class="module__content">
-              <h2 class="module__title text-center"><%= concert.band %> </h2>
-              <p class="module__txt module__txt--abstract text-center"><%= concert.venue %></p>
-              <p class="module__txt module__txt--description">
-                  <%= concert.notes %>
-              </p>
-            </div>
-           <% end %>
+                </div>
+              <% end%>
+
+            
         </div>
       </div>
 
