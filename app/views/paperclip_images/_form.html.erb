@@ -1,4 +1,4 @@
-<%= form_for @paperclip_image, html: { multipart: true } do |f| %>
+<%= form_for @paperclip_image,  html: { multipart: true } do |f| %>
   <% if @paperclip_image.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@paperclip_image.errors.count, "error") %> prohibited this @paperclip_image from being saved:</h2>
@@ -18,7 +18,6 @@
     <%= image_tag(f.object.asset.url(:small)) %><br />
     <em>Currently uploaded image</em> 
   <% end %>
-  
   </div>
   
   <div class="actions">

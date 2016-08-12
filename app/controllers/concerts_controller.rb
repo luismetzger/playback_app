@@ -12,12 +12,15 @@ class ConcertsController < ApplicationController
   # GET /concerts/1
   # GET /concerts/1.json
   def show
+
   end
 
   # GET /concerts/new
   def new
+    # byebug
     @concert = Concert.new
     @paperclip_image = PaperclipImage.new
+    # @concert.paperclip_image << @paperclip_image
     puts session[:user_id]
   end
 
@@ -28,13 +31,16 @@ class ConcertsController < ApplicationController
   # POST /concerts
   # POST /concerts.json
   def create
-    ap params
 
     @concert = Concert.new(concert_params)
-    @paperclip_image = Paperclip_image.new(paperclip_image_params)
+    @paperclip_image = PaperclipImage.new(paperclip_image_params)
+    @paperclip_image.concert = @concert
+
+    # Need to push the image to S3 now.
+    
 
     respond_to do |format|
-      if @concert.save
+      if @concert.save && @paperclip_image.save
         format.html { redirect_to @concert, notice: 'Concert was successfully created.' }
         format.json { render :show, status: :created, location: @concert }
       else
@@ -42,6 +48,7 @@ class ConcertsController < ApplicationController
         format.json { render json: @concert.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /concerts/1
@@ -79,4 +86,10 @@ class ConcertsController < ApplicationController
       #params.fetch(:concert, {})
       params.require(:concert).permit(:band, :venue, :date, :notes, :user_id)
     end
+
+    def paperclip_image_params
+      params.require(:paperclip_image).permit(:asset)
+      # params.fetch(:paperclip_image, {})
+    end
+
 end
