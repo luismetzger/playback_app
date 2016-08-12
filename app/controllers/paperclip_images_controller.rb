@@ -1,6 +1,8 @@
 class PaperclipImagesController < ApplicationController
   before_action :set_paperclip_image, only: [:show, :edit, :update, :destroy]
 
+  layout 'user'
+
   # GET /paperclip_images
   # GET /paperclip_images.json
   def index
@@ -24,8 +26,9 @@ class PaperclipImagesController < ApplicationController
   # POST /paperclip_images
   # POST /paperclip_images.json
   def create
-    @paperclip_image = PaperclipImage.new(paperclip_image_params)
 
+    @paperclip_image = PaperclipImage.new(paperclip_image_params)
+    # byebug
     respond_to do |format|
       if @paperclip_image.save
         format.html { redirect_to @paperclip_image, notice: 'Paperclip image was successfully created.' }
@@ -41,7 +44,7 @@ class PaperclipImagesController < ApplicationController
   # PATCH/PUT /paperclip_images/1.json
   def update
     respond_to do |format|
-      # Need to come back to this, if no image is updated save does not work 
+      # Need to come back to this, if no image is updated save does not work
 
       if @paperclip_image.update(paperclip_image_params)
         format.html { redirect_to @paperclip_image, notice: 'Paperclip image was successfully updated.' }

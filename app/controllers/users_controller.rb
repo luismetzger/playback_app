@@ -12,8 +12,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #come back and find out how to show the most recent concert posts
     @user = User.find(params[:id])
-    ap @user
+    @user_concerts = @user.concerts
+    p @user_shows
   end
 
   # GET /users/new

@@ -18,21 +18,24 @@ users = [
 		last_name: "Danna", 
 		current_city: "Denver",
 		facebook_id: "10101560694417787",
-		email: "kayce.danna@gmail.com"
+		email: "kayce.danna@gmail.com",
+		profile_photo: "https://scontent.xx.fbcdn.net/v/t1.0-1/p160x160/11709737_10101184563332497_1719156922581032238_n.jpg?oh=9d0495308239b76ffae93aa6fb631b2d&oe=581AB836"
 		),
 	User.create(
 		first_name: "Kyle", 
 		last_name: "Gibbons", 
 		current_city: "Denver",
 		facebook_id: "10208701595591385",
-		email: "kgibbons.com"
+		email: "kgibbons.com",
+		profile_photo: "https://scontent.xx.fbcdn.net/v/t1.0-9/12552995_10207227890989691_4343259897137735965_n.jpg?oh=2033e359097fed2aa231ce9213484ddd&oe=585C73EE"
 		),
 	User.create(
 		first_name: "Luis", 
 		last_name: "Metzger", 
 		current_city: "Denver",
 		facebook_id: "10209490174238679",
-		email: "luismetzger@me.com@gmail.com"
+		email: "luismetzger@me.com@gmail.com",
+		profile_photo: "https://scontent.xx.fbcdn.net/v/t1.0-9/10845971_10205052195731990_2832556411358384252_n.jpg?oh=d1ababfdb219ef48281436c57c13eea3&oe=585D7A9C"
 		)
 ]
 

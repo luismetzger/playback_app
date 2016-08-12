@@ -1,23 +1,11 @@
 <div class="container">
 
-  <%= form_for(concert) do |f| %>
-      <% if concert.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
-
-        <ul>
-        <% concert.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= form_for(concert, html: { multipart: true })   do |f| %>
 
     <div class="field">
       <%= f.label :date %>
       <%= f.date_field :date %>
     </div>
-
     <div class="field">
       <%= f.label :band %>
       <%= f.text_field :band %>
@@ -34,15 +22,21 @@
       <%= f.text_field :user_id, :value => session[:user_id], :type=>"hidden" %>
     </div>
     
-    <input html="{:class=>&quot;form-control&quot;}" type="file" name="paperclip_image[asset]" id="paperclip_image_asset">
-    
+      <%= fields_for @paperclip_image do |image| %>
+        <div class="form-group"> 
+            <%= image.label :asset %>
+            <%= image.file_field :asset, html: { class: 'form-control'} %>
+          <% if image.object.asset? %>
+          <br />
+            <%= image_tag(image.object.asset.url(:small)) %><br />
+          <em>Currently uploaded image</em> 
+        <%end%>
+        </div>
+      <% end %>
+
     <div class="actions">
       <%= f.submit %>
     </div>
-
-
   <% end %>
-
-
 
 </div>
