@@ -2,7 +2,7 @@
 <section id="logged_in_user_home">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-2 col-lg-push-1 col-md-2">
         <div class="profile_card hidden-xs hidden-sm hidden-md" style="background-image: url('https://unsplash.it/600/400');">
           <img class="img-circle" src="<%=@user.profile_photo%>" alt="" />
           <div class="info_section">
@@ -27,22 +27,21 @@
           <div class="overlay"></div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="post_feed">
-   
-          <!-- Post 1 -->
 
+
+      <div class="col-lg-4 col-lg-offset-2 col-md-6 col-md-offset-3">
+        <div class="post_feed">
                 <!-- Post 1 -->
-        <% @user_concerts.each do |concert| %>
-        <div class="module">
-          <% unless concert.paperclip_images.first.nil? %>
-            <img class="module__img" src="<%=concert.paperclip_images.first.asset.url%>"/>  
-          <% end %>    
-              <div class="module__meta"><%= concert.date %> </div>
-              <div class="module__share">
-                <i class="fa fa-heart" aria-hidden="true"></i>
-                <i class="fa fa-share" aria-hidden="true"></i>
-              </div>
+          <% @user_concerts.each do |concert| %>
+            <div class="module">
+              <% unless concert.paperclip_images.first.nil? %>
+                <img class="module__img" src="<%=concert.paperclip_images.first.asset.url%>"/>
+              <% end %>
+                  <div class="module__meta"><%= concert.date %> </div>
+                  <div class="module__share">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <i class="fa fa-share" aria-hidden="true"></i>
+                  </div>
             </div>
             <div class="module__content">
               <h2 class="module__title text-center"><%= concert.band %> </h2>
@@ -51,11 +50,12 @@
                   <%= concert.notes %>
               </p>
             </div>
+           <% end %>
         </div>
-        <% end %>
- 
-          
-      <div class="col-md-3 hidden-md">
+      </div>
+
+
+      <div class="col-md-2 col-md-offset-1 col-lg-2 col-lg-pull-1 hidden-md">
         <div class="follow_users hidden-xs hidden-sm">
           <ul class="list-group">
             <li class="list-group-item text-center followers_title">
