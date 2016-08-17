@@ -72,42 +72,10 @@
 
     <%= yield %>
 
-    <!-- Modal -->
-    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="col-md-2 col-md-pull-1 hidden-xs hidden-sm">
-          <img class="img-circle" src="https://unsplash.it/100/100" alt="" />
-        </div>
-        <div class="col-md-10">
-          <div class="modal-header col-md-offset-3">
-            <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title text-center" id="myModalLabel">Create a playback</h4>
-          </div>
+  </body>
 
-          <div class="modal-content">
-            <%= image_tag("image_uploader.jpg", :class => "image_uploader img-responsive") %>
-
-            <div class="modal-body">
-              <%= form_for @user  do |f| %>
-                <div class="form-group">
-                  <%= f.label :first_name, 'Name of Band' %>
-                  <%= f.text_field :first_name, placeholder: 'Enter name of band', class: "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :last_name, 'Venue Name' %>
-                  <%= f.text_field :last_name, placeholder: 'Enter name of band', class: "form-control" %>
-                </div>
-
-
-            </div>
-            <div class="modal-footer">
-              <%= f.submit 'Post', :class => 'btn btn-success btn-lg btn-submit' %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+  </html>
+  
 
 
   </body>
