@@ -1,6 +1,5 @@
 class ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
-
   layout "user"
 
   # GET /concerts
@@ -17,7 +16,6 @@ class ConcertsController < ApplicationController
 
   # GET /concerts/new
   def new
-    # byebug
     @concert = Concert.new
     @paperclip_image = PaperclipImage.new
     # @concert.paperclip_image << @paperclip_image

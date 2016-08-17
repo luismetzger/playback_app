@@ -1,6 +1,5 @@
 class PaperclipImagesController < ApplicationController
   before_action :set_paperclip_image, only: [:show, :edit, :update, :destroy]
-
   layout 'user'
 
   # GET /paperclip_images
@@ -28,7 +27,6 @@ class PaperclipImagesController < ApplicationController
   def create
 
     @paperclip_image = PaperclipImage.new(paperclip_image_params)
-    # byebug
     respond_to do |format|
       if @paperclip_image.save
         format.html { redirect_to @paperclip_image, notice: 'Paperclip image was successfully created.' }
