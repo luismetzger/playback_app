@@ -99,9 +99,9 @@
     <script>
 
 
-        var lock = new Auth0Lock('eMAgoBH8Bou1eDuASFBPK5tBDrso3FOs', 'playback.auth0.com', {
+        var lock = new Auth0Lock('<%=ENV.fetch('CLIENT_ID')%>', 'playback.auth0.com', {
           auth: {
-            redirectUrl: 'http://localhost:3000/auth/auth0/callback',
+            redirectUrl: '<%=ENV.fetch('REDIRECT')%>',
             responseType: 'code',
             params: {
               scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
