@@ -1,21 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   layout 'user'
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all 
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    #come back and find out how to show the most recent concert posts
     @user = User.find(params[:id])
     @user_concerts = @user.concerts
-    p @user_shows
   end
 
   # GET /users/new
@@ -53,7 +50,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:asset, :first_name, :last_name)
-
       # params.fetch(:user, {})
     end
 end
