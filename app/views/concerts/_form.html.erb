@@ -21,15 +21,15 @@
      <div class="field">
       <%= f.text_field :user_id, :value => session[:user_id], :type=>"hidden" %>
     </div>
-    
+
       <%= fields_for @paperclip_image do |image| %>
-        <div class="form-group"> 
+        <div class="form-group">
             <%= image.label :asset %>
             <%= image.file_field :asset, html: { class: 'form-control'} %>
           <% if image.object.asset? %>
           <br />
             <%= image_tag(image.object.asset.url(:small)) %><br />
-          <em>Currently uploaded image</em> 
+          <em>Currently uploaded image</em>
         <%end%>
         </div>
       <% end %>

@@ -30,16 +30,17 @@ class ConcertsController < ApplicationController
   # POST /concerts.json
   def create
 
+
     @concert = Concert.new(concert_params)
     @paperclip_image = PaperclipImage.new(paperclip_image_params)
     @paperclip_image.concert = @concert
 
     # Need to push the image to S3 now.
-    
+
 
     respond_to do |format|
       if @concert.save && @paperclip_image.save
-        format.html { redirect_to @concert, notice: 'Concert was successfully created.' }
+        format.html { redirect_to user_path(concert_params[:user_id]), notice: 'Concert was successfully created.' }
         format.json { render :show, status: :created, location: @concert }
       else
         format.html { render :new }
